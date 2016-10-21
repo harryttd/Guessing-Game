@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Guessing Game</title>
+    <!-- Bootstrap and CSS here-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel='stylesheet' type='text/css' href="bootstrap.css">
+  </head>
+  <body id="body">
+
+      <div id='app' class='container center shadow'>
+
+        <div id='headers'>
+          <h1 id='title'>Guessing Game!</h1>
+          <h3 id='subtitle'>Guess a number between 1 and 100!</h3>
+        </div>
+
+        <div id='main'>
+          <div id='input-parent'>
+            <input id='player-input' class='center' placeholder="?" maxlength='3' autofocus=autofocus></input>
+            <button class='btn btn-success' id='submit'>Go!</button>
+          </div>
+
+          <div id='guesses'>
+            <ul id='guess-list'>
+              <li class='guess shadow'>-</li>
+              <li class='guess shadow'>-</li>
+              <li class='guess shadow'>-</li>
+              <li class='guess shadow'>-</li>
+              <li class='guess shadow'>-</li>
+            </ul>
+          </div>
+
+          <div id="menu-btns">
+            <button class='btn btn-large btn-warning center' id='reset'>RESET</button>
+            <button class='btn btn-large btn-info center' id='hint'>Hint</button>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div id='footer' class='center'>
+        <div class='row'>
+          <div class='col-sm-4'>
+            <img src='fa-logo@2x.png'></img>
+          </div>
+
+          <div class='col-sm-4'>
+            <h4 id="name">Aryeh Harris</h4>
+          </div>
+
+          <div class='col-sm-4'>
+            <img src='grace_hopper_academy.png'></img>
+          </div>
+
+
+        </div>
+    </div>
+
+  </body>
+</html>
