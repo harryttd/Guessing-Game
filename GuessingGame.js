@@ -67,7 +67,7 @@ Game.prototype.checkGuess = function(guess) {
 };
 
 Game.prototype.provideHint = function() {
-  return shuffle([this.winningNumber, generateWinningNumber(), generateWinningNumber()]);
+  return shuffle([this.winningNumber, generateWinningNumber(), generateWinningNumber(), generateWinningNumber()]);
 };
 
 function shuffle(array) {
@@ -118,7 +118,7 @@ $(document).ready(function() {
     var hint = game.provideHint();
     var input = prompt('You only get one hint. Type "ok" again to confirm.');
     if (input.toLowerCase() === 'ok') {
-      $('#title').text('The winning number is ' + hint[0] + ', ' + hint[1] + ', or ' + hint[2]);
+      $('#title').text('Possible Winning Number: ' + hint[0] + ', ' + hint[1] + ', ' + hint[2] + ', or ' + hint[3]);
       $('#hint').prop('disabled', true);
     }
   });
