@@ -116,6 +116,10 @@ $(document).ready(function() {
 
   $('#hint').click(function() {
     var hint = game.provideHint();
-    $('#title').text('The winning number is ' + hint[0] + ', ' + hint[1] + ', or ' + hint[2]);
+    var input = prompt('You only get one hint. Type "ok" again to confirm.');
+    if (input.toLowerCase() === 'ok') {
+      $('#title').text('The winning number is ' + hint[0] + ', ' + hint[1] + ', or ' + hint[2]);
+      $('#hint').prop('disabled', true);
+    }
   });
 });
