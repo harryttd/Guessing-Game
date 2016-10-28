@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>Guessing Game</title>
     <!-- Bootstrap and CSS here-->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel='stylesheet' type='text/css' href="bootstrap.css">
   </head>
+
   <body id="body">
-
-      <div id='app' class='container center shadow'>
-
-        <div id='headers'>
-          <h1 id='title'>Guessing Game!</h1>
-          <h3 id='subtitle'>Guess a number between 1 and 100!</h3>
-        </div>
-
-        <div id='main'>
-          <div id='input-parent'>
-            <input id='player-input' class='center' placeholder="?" maxlength='3' autofocus=autofocus></input>
-            <button class='btn btn-success' id='submit'>Go!</button>
-          </div>
-
-          <div id='guesses'>
-            <ul id='guess-list'>
-              <li class='guess shadow'>-</li>
-              <li class='guess shadow'>-</li>
-              <li class='guess shadow'>-</li>
-              <li class='guess shadow'>-</li>
-              <li class='guess shadow'>-</li>
-            </ul>
-          </div>
-
-          <div id="menu-btns">
-            <button class='btn btn-large btn-warning center' id='reset'>RESET</button>
-            <button class='btn btn-large btn-info center' id='hint'>Hint</button>
-          </div>
-        </div>
-        <div class="push"></div>
+    
+    <div id='app' class='container center shadow'>
+      <div id='headers'>
+        <h1 id='title'>Guessing Game!</h1>
+        <h3 id='subtitle'>Guess a number between 1 and 100!</h3>
       </div>
 
-    <div id='footer' class='center'>
-        <div class='row'>
-          <div class='col-sm-4'>
-            <img src='fa-logo@2x.png'></img>
-          </div>
-
-          <div class='col-sm-4'>
-            <h4 id="name">Aryeh Harris</h4>
-          </div>
-
-          <div class='col-sm-4'>
-            <img id="grace-hopper" src='Grace_Hopper_Logo_1.png'></img>
-          </div>
-
+      <div id='main'>
+        <div id='input-parent'>
+          <input id='player-input' class='center' placeholder="?" maxlength='3' autofocus=autofocus></input>
+          <button class='btn btn-success' id='submit'>Go!</button>
         </div>
+
+        <div id='guesses'>
+          <ul id='guess-list'>
+            <li class='guess shadow'>-</li>
+            <li class='guess shadow'>-</li>
+            <li class='guess shadow'>-</li>
+            <li class='guess shadow'>-</li>
+            <li class='guess shadow'>-</li>
+          </ul>
+        </div>
+
+        <div id="menu-btns">
+          <button class='btn btn-large btn-warning center' id='reset'>RESET</button>
+          <button class='btn btn-large btn-info center' id='hint'>Hint</button>
+        </div>
+      </div>
+      <div class="push"></div> <!--Part of making the footer stick at the bottom-->
+    </div>
+
+    <div id='footer' class='center'>
+      <div class='row'>
+        <div class='col-sm-4'>
+          <img src='fa-logo@2x.png'></img>
+        </div>
+
+        <div class='col-sm-4'>
+          <h4 id="name">Aryeh Harris</h4>
+        </div>
+
+        <div class='col-sm-4'>
+          <img id="grace-hopper" src='Grace_Hopper_Logo_1.png'></img>
+        </div>
+
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>

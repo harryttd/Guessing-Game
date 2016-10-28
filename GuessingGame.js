@@ -21,31 +21,33 @@ Game.prototype.isLower = function() {
 };
 
 Game.prototype.playersGuessSubmission = function(guess) {
-  if (typeof guess !== 'number' || guess < 1 || guess > 100) {
-    throw("That is an invalid guess.");
+  if (guess === 0) return "You didn't guess anything.";
+  else if (isNaN(guess) || guess < 0 || guess > 100) {
+    return "Invalid guess.";
   }
   else this.playersGuess = guess;
   return this.checkGuess(guess);
 };
 
 Game.prototype.checkGuess = function(guess) {
-  if (guess === this.winningNumber) {
-    this.pastGuesses.push(guess);
-    $('#guess-list li:nth-child(' + this.pastGuesses.length + ')').text(this.playersGuess);
-    $('#hint, #submit').prop('disabled', true);
-    $('#subtitle').text('Hit reset to play again!');
-    return "You Win!";
-  }
-  else if (this.pastGuesses.includes(guess)) {
-    return "You have already guessed that number.";
+  if (this.pastGuesses.includes(guess)) {
+    return 'You have already guessed that number.';
   }
   else {
     this.pastGuesses.push(guess);
     $('#guess-list li:nth-child(' + this.pastGuesses.length + ')').text(this.playersGuess);
+  }
+
+  if (guess === this.winningNumber) {
+    $('#hint, #submit, #player-input').prop('disabled', true);
+    $('#subtitle').text('Hit reset to play again!');
+    return 'You Win!';
+  }
+  else {
     if (this.pastGuesses.length === 5) {
-      $('#hint, #submit').prop('disabled', true);
+      $('#hint, #submit, #player-input').prop('disabled', true);
       $('#subtitle').text('Hit reset to play again!');
-      return "You Lose.";
+      return 'You Lose. Winning number was ' + this.winningNumber + '.';
     }
     else {
       var diff = this.difference();
@@ -56,10 +58,10 @@ Game.prototype.checkGuess = function(guess) {
         $('#subtitle').text('Guess Lower!');
       }
 
-      if (diff < 10) return 'You\'re burning up!';
-      else if (diff < 25) return 'You\'re lukewarm.';
-      else if (diff < 50) return 'You\'re a bit chilly.';
-      else return 'You\'re ice cold!';
+      if (diff < 10) return "You're burning up!";
+      else if (diff < 25) return "You're lukewarm.";
+      else if (diff < 50) return "You're a bit chilly.";
+      else return "You're ice cold!";
     }
   }
 };
@@ -87,11 +89,12 @@ function makeGuess(game) {
   $('#player-input').val('');
   var output = game.playersGuessSubmission(+guess);
   $('#title').text(output);
+  $('#reset').prop('disabled', false);
 }
 
 $(document).ready(function() {
   var game = newGame();
-
+  $('#reset').prop('disabled', true);
   $('#submit').click(function() {
     makeGuess(game);
   });
@@ -107,7 +110,8 @@ $(document).ready(function() {
     $('#title').text('Play the Guessing Game!');
     $('#subtitle').text('Guess a number between 1-100!');
     $('.guess').text('-');
-    $('#hint, #submit').prop('disabled', false);
+    $('#hint, #submit, #player-input').prop('disabled', false);
+    $('#reset').prop('disabled', true);
   });
 
   $('#hint').click(function() {
