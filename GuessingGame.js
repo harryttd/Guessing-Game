@@ -31,7 +31,7 @@ Game.prototype.playersGuessSubmission = function(guess) {
 
 Game.prototype.checkGuess = function(guess) {
   if (this.pastGuesses.includes(guess)) {
-    return 'You have already guessed that number.';
+    return 'You already guessed that number.';
   }
   else {
     this.pastGuesses.push(guess);
@@ -48,8 +48,7 @@ Game.prototype.checkGuess = function(guess) {
       $('#hint, #submit, #player-input').prop('disabled', true);
       $('#subtitle').text('Hit reset to play again!');
       return 'You Lose. Winning number was ' + this.winningNumber + '.';
-    }
-    else {
+    } else {
       var diff = this.difference();
       if (this.isLower()) {
         $('#subtitle').text('Guess Higher!');
@@ -95,6 +94,7 @@ function makeGuess(game) {
 $(document).ready(function() {
   var game = newGame();
   $('#reset').prop('disabled', true);
+
   $('#submit').click(function() {
     makeGuess(game);
   });

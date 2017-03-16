@@ -43,6 +43,10 @@ img {
 #footer {
   border-top: solid 2px black;
   background-color: #00BFFF;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .guess {
